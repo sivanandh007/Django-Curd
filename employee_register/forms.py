@@ -12,3 +12,8 @@ class EmployeeForm(forms.ModelForm):
             'mobile' : 'Phone No',
 
         }
+
+    def __init__(self,*args,**kwargs):
+        super(EmployeeForm,self).__init__(*args,**kwargs)
+        self.fields['position'].empty_label = "Select"
+        self.fields['emp_code'].required = False
